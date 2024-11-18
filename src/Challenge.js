@@ -1,90 +1,54 @@
 import "./challenge.css";
-const skills = [
+import useState from "react";
+const questions = [
   {
-    skill: "HTML+CSS",
-    level: "advanced",
-    color: "#2662ea",
+    id: 3457,
+    question: "What language is React based on?",
+    answer: "JavaScript",
   },
   {
-    skill: "JavaScript",
-    level: "advanced",
-    color: "#efd81d",
+    id: 7354,
+    question: "What are the building blocks of React apps?",
+    answer: "Components",
   },
   {
-    skill: "Web Design",
-    level: "advanced",
-    color: "#c3dcaf",
+    id: 2945,
+    question: "What's the name of the syntax we use to describe a UI in React?",
+    answer: "JSX",
   },
   {
-    skill: "Git and Github",
-    level: "intermediate",
-    color: "#e84f33",
+    id: 2620,
+    question: "How to pass data from parent to child components?",
+    answer: "Props",
   },
   {
-    skill: "React",
-    level: "advanced",
-    color: "#68daf6",
+    id: 4087,
+    question: "How to give components memory?",
+    answer: "useState Hook",
   },
   {
-    skill: "Svelte",
-    level: "beginner",
-    color: "#ff3b00",
+    id: 2002,
+    question:
+      "What do we call an input element that is completely synchronized with city?",
+    answer: "Controlled element",
   },
 ];
 export default function Challenge() {
   return (
     <>
-      <h1>Challenge Page</h1>
-      <div className="card">
-        <Avatar />
-        <div className="data">
-          <Intro />
-          <SkillList />
-        </div>
-      </div>
-    </>
-  );
-}
-function Avatar() {
-  return <img src="./pizzas/focaccia.jpg" alt="Avatar" className="avatar" />;
-}
-
-function Intro() {
-  return (
-    <>
-      <h1>Idyllic Ogunyileka </h1>
-      <Detail />
+      <div className="title">Challenge Page</div>
+      <Cards />
     </>
   );
 }
 
-function Detail() {
+function Cards() {
+  const [selectedId, setSelectedId] = useState(2002);
   return (
-    <p className="detail">
-      Full-Stack web developer and a student at Udemy. When not coding, I like
-      to sleep, cook, eat or just enjoy the Futa Sun
-    </p>
-  );
-}
-
-function SkillList() {
-  const skillsData = skills;
-  return (
-    <ul>
-      {skillsData.map((skill) => (
-        <Skill skill={skill} />
+    <div className="cards">
+      {questions.map((question) => (
+        <div className="card">{question.question}</div>
       ))}
-    </ul>
-  );
-}
-
-function Skill({ skill }) {
-  return (
-    <li className="skill" style={{ backgroundColor: skill.color }}>
-      <span className="skillName">{skill.skill}</span>
-      <span className="emoji">{skill.level === "advanced" && "💪"}</span>
-      <span className="emoji">{skill.level === "intermediate" && "✌"}</span>
-      <span className="emoji">{skill.level === "beginner" && "👶"}</span>
-    </li>
+    </div>
   );
 }
