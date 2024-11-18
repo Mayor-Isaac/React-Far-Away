@@ -15,41 +15,26 @@ body {
   color: #252525;
   font-weight: 400;
   background-color: #f7f2e9;
+  border-bottom: 1.6rem solid #edc84b;
   min-height: 100vh;
   padding: 3.2rem;
   padding-bottom: 6rem;
-  max-width: 120rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 4.8rem;
 }
-.title {
-  text-align: center;
-  border-bottom: 2px solid #4bafed;
-  margin-bottom: 2rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 15px;
-}
-.card {
-  height: 180px;
-  display: flex;
+button {
+  height: 30px;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
-  text-align: center;
-  background-color: #40474dbb;
-  padding: 0.8rem;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
+  margin: 0.8rem 0.2rem;
 }
-.card:hover {
-  /* background-color: #eeeeee7e; */
-}
-.answer {
-  background-color: red;
+span {
+  font-weight: 600;
+  font-size: 1.5rem;
 }

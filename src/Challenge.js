@@ -1,5 +1,5 @@
 import "./challenge.css";
-import useState from "react";
+import { useState } from "react";
 const questions = [
   {
     id: 3457,
@@ -43,12 +43,24 @@ export default function Challenge() {
 }
 
 function Cards() {
-  const [selectedId, setSelectedId] = useState(2002);
+  const [selectedId, setSelectedId] = useState(null);
+  function handleClick(id) {
+    setSelectedId(id !== selectedId ? id : null);
+  }
   return (
     <div className="cards">
-      {questions.map((question) => (
-        <div className="card">{question.question}</div>
-      ))}
+      {questions.map((question) => {
+        return (
+          <div
+            className={selectedId === question.id ? "card answer" : "card"}
+            onClick={() => handleClick(question.id)}
+          >
+            <p>
+              {question.id === selectedId ? question.answer : question.question}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 }
