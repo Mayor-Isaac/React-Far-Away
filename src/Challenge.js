@@ -1,4 +1,4 @@
-import "./challenge.css";
+// import "./challenge.css";
 import { useState } from "react";
 const questions = [
   {

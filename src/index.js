@@ -7,8 +7,8 @@ import FinalChallenge from "./FinalChallenge";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Challenge /> */}
-    <FinalChallenge />
+    {/* <FinalChallenge /> */}
   </React.StrictMode>
 );

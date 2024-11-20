@@ -1,4 +1,4 @@
-import "./final-challenge.css";
+// import "./final-challenge.css";
 import { useState } from "react";
 
 export default function FinalChallenge() {
